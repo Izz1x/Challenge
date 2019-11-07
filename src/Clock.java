@@ -4,11 +4,9 @@ import java.util.Scanner;
 /**
  * @author gabriela (Izz1x)
  *
- *		Calculo do ângulo dos ponteiros de um relógio.
- *         1. Considerando: 
- *         • 00:00h possui um ângulo de 0 
- *         • 00:15h possui um ângulo de 45 
- *         • 00:30h possui um ângulo de 180
+ *         Calculo do ângulo dos ponteiros de um relógio. 1. Considerando: •
+ *         00:00h possui um ângulo de 0 • 00:15h possui um ângulo de 45 • 00:30h
+ *         possui um ângulo de 180
  */
 
 public class Clock {
@@ -52,12 +50,12 @@ public class Clock {
 				;
 			}
 			if (input.equals("2")) { // caso seja digitado o numero 2
-				horario = new GregorianCalendar();
+				horario = new GregorianCalendar(); // novo calendario criado com os valores atuais do horario
 				System.out.println("Horário: " + horario.get(GregorianCalendar.HOUR) + "h "
 						+ horario.get(GregorianCalendar.MINUTE) + "min ");
 				System.out.println("Ângulo em graus: " + clock.retornaAnguloRelogio(horario));
 			}
-			if (input.equals("quit")) { // caso seja digitado quit
+			if (input.equals("quit")) { // caso seja digitado quit, o programa fecha
 				System.out.println("Fechando.");
 				scanner.close();
 				System.exit(5);

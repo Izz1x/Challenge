@@ -4,6 +4,11 @@ import java.util.Scanner;
 /**
  * @author gabriela
  *
+ *		Calculo do ângulo dos ponteiros de um relógio.
+ *         1. Considerando: 
+ *         • 00:00h possui um ângulo de 0 
+ *         • 00:15h possui um ângulo de 45 
+ *         • 00:30h possui um ângulo de 180
  */
 
 public class Clock {
@@ -15,8 +20,8 @@ public class Clock {
 		GregorianCalendar horario = new GregorianCalendar();
 		Scanner scanner = new Scanner(System.in);
 		String input;
-		System.out.println("Oi! Irei calcular o angulo entre o ponteiro das horas e dos minutos de um relogio.");
-		System.out.println("Gostaria de informar a hora (1) ou deseja usar o horario atual (2)? SAIR: (quit) ");
+		System.out.println("Oi! Irei calcular o ângulo entre o ponteiro das horas e dos minutos de um relógio.");
+		System.out.println("Gostaria de informar a hora (1) ou deseja usar o horário atual (2)? SAIR: (quit) ");
 		while (true) {
 			input = scanner.nextLine();
 			if (input.equals("1")) { // caso seja digitado o numero 1
@@ -42,15 +47,15 @@ public class Clock {
 							+ horario.get(GregorianCalendar.MINUTE) + "min");
 					System.out.println("Angulo em graus: " + clock.retornaAnguloRelogio(horario));
 				} catch (Exception e) { // se o usuario digitar algo que nao seja um numero, como uma letra
-					System.out.println("Favor digitar um numero");
+					System.out.println("Favor digitar um número");
 				}
 				;
 			}
 			if (input.equals("2")) { // caso seja digitado o numero 2
 				horario = new GregorianCalendar();
-				System.out.println("Horario: " + horario.get(GregorianCalendar.HOUR) + "h "
+				System.out.println("Horário: " + horario.get(GregorianCalendar.HOUR) + "h "
 						+ horario.get(GregorianCalendar.MINUTE) + "min ");
-				System.out.println("Angulo em graus: " + clock.retornaAnguloRelogio(horario));
+				System.out.println("Ângulo em graus: " + clock.retornaAnguloRelogio(horario));
 			}
 			if (input.equals("quit")) { // caso seja digitado quit
 				System.out.println("Fechando.");
@@ -68,8 +73,9 @@ public class Clock {
 		min_p = horario.get(GregorianCalendar.MINUTE);
 		long ang_h = (360 / 12 * hour_p); // angulo do ponteiro das horas
 		long ang_m = (360 / 60 * min_p); // angulo do ponteiro dos minutos
-		long ang_abs =  Math.abs(ang_h-ang_m); // valor absoluto da diferenca do angulo dos dois ponteiros
-		if (ang_abs > 180) { // caso a diferenca entre os angulos calculados seja maior que 180, iremos encontrar o menor dos angulos;
+		long ang_abs = Math.abs(ang_h - ang_m); // valor absoluto da diferenca do angulo dos dois ponteiros
+		if (ang_abs > 180) { // caso a diferenca entre os angulos calculados seja maior que 180, iremos
+								// encontrar o menor dos angulos;
 			ang_abs = 360 - ang_abs;
 		}
 		return ang_abs;

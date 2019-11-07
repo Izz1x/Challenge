@@ -2,7 +2,7 @@ import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 /**
- * @author gabriela
+ * @author gabriela (Izz1x)
  *
  *		Calculo do ângulo dos ponteiros de um relógio.
  *         1. Considerando: 
